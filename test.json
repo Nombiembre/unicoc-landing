@@ -1,0 +1,213 @@
+[
+  {
+    "name": "Unicoc",
+    "sublinks": [
+      {
+        "name": "Sobre Nosotros",
+        "items": [
+          {
+            "name": "Noticias",
+            "href": "/unicoc/noticias"
+          },
+          {
+            "name": "Galería",
+            "href": "/unicoc/galeria"
+          },
+          {
+            "name": "Calendario",
+            "href": "/unicoc/calendario"
+          },
+          {
+            "name": "Directorio",
+            "href": "/unicoc/directorio"
+          },
+          {
+            "name": "Historia",
+            "href": "/unicoc/historia"
+          },
+          {
+            "name": "Principios",
+            "href": "/unicoc/principios"
+          },
+          {
+            "name": "Gobierno",
+            "href": "/unicoc/gobierno"
+          },
+          {
+            "name": "Recursos de Marca",
+            "href": "/unicoc/recursos"
+          },
+          {
+            "name": "Blogs",
+            "href": "/unicoc/blogs"
+          }
+        ]
+      },
+      {
+        "name": "Documentos y Políticas",
+        "items": [
+          {
+            "name": "PEI",
+            "href": "/documentos/pei"
+          },
+          {
+            "name": "Reglamentos",
+            "href": "/documentos/reglamentos"
+          },
+          {
+            "name": "Políticas",
+            "href": "/documentos/politicas"
+          },
+          {
+            "name": "Resoluciones",
+            "href": "/documentos/resoluciones"
+          },
+          {
+            "name": "Formatos",
+            "href": "/documentos/formatos"
+          },
+          {
+            "name": "Documentos ESAL",
+            "href": "/documentos/esal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Admisiones",
+    "items": [
+      {
+        "name": "Información para Aspirantes",
+        "href": "/admisiones/informacion"
+      },
+      {
+        "name": "Programas Académicos",
+        "href": "/admisiones/programas"
+      },
+      {
+        "name": "Matrícula",
+        "href": "/admisiones/matricula"
+      },
+      {
+        "name": "Certificados",
+        "href": "/admisiones/certificados"
+      }
+    ]
+  },
+  {
+    "name": "Facultades",
+    "items": [
+      {
+        "name": "Colegio Administrativo y Ciencias Económicas",
+        "href": "/facultades/administrativo"
+      },
+      {
+        "name": "Colegio Jurídico y Ciencias Sociales",
+        "href": "/facultades/juridico"
+      },
+      {
+        "name": "Colegio Odontológico Colombiano y Cali",
+        "href": "/facultades/odontologico"
+      },
+      {
+        "name": "Colegio de Ingenierías",
+        "href": "/facultades/ingenierias"
+      }
+    ]
+  },
+  {
+    "name": "Biblioteca",
+    "sublinks": [
+      {
+        "name": "Investigación",
+        "items": [
+          {
+            "name": "Objetivos",
+            "href": "/investigacion/objetivos"
+          },
+          {
+            "name": "Políticas",
+            "href": "/investigacion/politicas"
+          },
+          {
+            "name": "Comité Ética",
+            "href": "/investigacion/etica"
+          },
+          {
+            "name": "Antiplagio",
+            "href": "/investigacion/antiplagio"
+          },
+          {
+            "name": "Journal",
+            "href": "/investigacion/journal"
+          },
+          {
+            "name": "Simposios",
+            "href": "/investigacion/simposios"
+          },
+          {
+            "name": "Proyectos",
+            "href": "/investigacion/proyectos"
+          }
+        ]
+      },
+      {
+        "name": "Biblioteca",
+        "items": [
+          {
+            "name": "Acerca del SIBU",
+            "href": "/biblioteca/sibu"
+          },
+          {
+            "name": "Búsqueda",
+            "href": "/biblioteca/busqueda"
+          },
+          {
+            "name": "Apoyo al Aprendizaje e Investigación",
+            "href": "/biblioteca/apoyo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bienestar e Internacionalización",
+    "items": [
+      {
+        "name": "Bienestar: Programas, Actividades, Rutas de Atención",
+        "href": "/bienestar"
+      },
+      {
+        "name": "Internacionalización: Programas, Centro de Idiomas",
+        "href": "/internacionalizacion"
+      }
+    ]
+  },
+  {
+    "name": "Proyección Social",
+    "items": [
+      {
+        "name": "Proyección Social: Programas, Objetivos",
+        "href": "/proyeccion-social"
+      },
+      {
+        "name": "Educación Continuada: Conferencias, Diplomados, Seminarios",
+        "href": "/educacion-continuada"
+      }
+    ]
+  },
+  {
+    "name": "Clínicas",
+    "items": [
+      {
+        "name": "Derechos y Deberes",
+        "href": "/clinicas/derechos-deberes"
+      },
+      {
+        "name": "Carpeta Institucional",
+        "href": "/clinicas/carpeta"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+---
+import Section from '../common/Section.astro';
+
+interface Props {
+  title: string;
+  bgUrl: string;
+}
+
+const { title, bgUrl } = Astro.props;
+---
+
+<div
+  style={`background-image: url(${bgUrl});`}
+  class={`min-h-[40svh] h-full bg-no-repeat bg-cover bg-center grid place-content-center`}
+>
+  <div class="container text-white">
+    <Section>
+      <div class="relative isolate space-y-4">
+        <div class="absolute bg-black -inset-4 filter blur-[80px] -z-10"></div>
+        <h1 class="md:text-6xl text-4xl text-center leading-tight font-bricolage font-bold">
+          {title}
+        </h1>
+      </div>
+    </Section>
+  </div>
+</div>

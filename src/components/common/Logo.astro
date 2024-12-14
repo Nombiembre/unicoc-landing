@@ -1,0 +1,12 @@
+---
+interface Props {
+  href: string;
+  class?: string;
+}
+
+const { href, class: className } = Astro.props;
+---
+
+<a href={href} class={className}>
+  <img src="/images/logo-unicoc-blanco.png" alt="Unicoc Logo" class="w-auto md:max-h-12 max-h-10" />
+</a>

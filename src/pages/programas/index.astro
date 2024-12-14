@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Section from '~/components/common/Section.astro';
+import Filter from '~/components/programas/Filter.astro';
+import RenderData from '~/components/programas/RenderData.tsx';
+import Book from '~/assets/icons/Book.astro';
+import MapPin from '~/assets/icons/MapPin.astro';
+
+const title = 'Conoce Nuestros Programas';
+const bgUrl = '/images/page_heading_bg.jpg';
+---
+
+<Layout title="Nuestros Programas" hero={{ bgUrl, title }}>
+  <div class="container">
+    <Section class="grid gap-8">
+      <Filter filters={['pregrado', 'posgrado']} />
+      <RenderData client:only="react">
+        <Book slot="bookIcon"/>
+        <MapPin slot="geoIcon"/>
+      </RenderData>
+    </Section>
+  </div>
+</Layout>

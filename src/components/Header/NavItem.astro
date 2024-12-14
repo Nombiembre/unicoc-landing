@@ -1,0 +1,39 @@
+---
+import Sublinks from './Sublinks.astro';
+import Items from './Items.astro';
+
+const classesDesktop = 'w-[1350px] z-50 p-10 bg-white border border-gray-300 rounded-2xl shadow-md flex gap-10';
+const classesMobile = 'container ';
+
+const { mobile, navItem } = Astro.props;
+---
+
+<li class="nav-item || p-4 md:hover:bg-primary-100/80 rounded">
+  <a
+    href="#"
+    class={`transition-all duration-200 ease-in-out cursor-default font-bricolage font-semibold ${mobile && 'text-black font-bold text-lg'}`}
+  >
+    {navItem.name}
+  </a>
+
+  <div class={`nav-item nav-item-card || ${mobile ? '' : 'absolute hidden nav-item pt-8 left-0 top-14'}`}>
+    <ul class={mobile ? classesMobile : classesDesktop}>
+      {navItem.sublinks && <Sublinks mobile={mobile} data={navItem.sublinks} />}
+      {navItem.items && <Items data={navItem.items} />}
+    </ul>
+  </div>
+</li>
+
+<style>
+  .nav-item {
+    transition: all 0.3s ease-in-out;
+
+    &:hover .nav-item-card {
+      display: flex;
+    }
+
+    &:hover a {
+      @apply md:text-primary-700;
+    }
+  }
+</style>

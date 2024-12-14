@@ -1,0 +1,26 @@
+---
+import type { Sublink } from '~/const/navigation';
+import Items from './Items.astro';
+
+interface Props {
+  data: Sublink[];
+  mobile?: boolean;
+}
+
+const { data, mobile } = Astro.props;
+---
+
+{
+  data.map(({ name, items }, index) => (
+    <li class={`${index !== 0  && 'md:border-l border-slate-300 md:pl-10'} `}>
+      {!mobile ? <span class={`font-bold text-primary-700/80 mb-10 uppercase text-sm inline-block px-6`}>{name}</span> : ''}
+      <Items hidden={false} data={items} />
+    </li>
+  ))
+}
+
+<style>
+  span {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+</style>

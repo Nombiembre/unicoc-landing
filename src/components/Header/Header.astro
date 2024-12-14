@@ -1,0 +1,13 @@
+---
+import Logo from '../common/Logo.astro';
+import MobileNav from './MobileNav.astro';
+import Nav from './Nav.astro';
+---
+
+<header class="py-4 shadow z-50 bg-primary-900 text-white top-0 w-full">
+  <div class="container relative flex justify-between md:justify-center items-center">
+    <Logo href="/" class="md:hidden" />
+    <Nav mobile={false} class="hidden md:flex" />
+    <MobileNav />
+  </div>
+</header>

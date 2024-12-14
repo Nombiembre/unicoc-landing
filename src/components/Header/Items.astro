@@ -1,0 +1,26 @@
+---
+import type { Item } from '~/const/navigation';
+
+interface Props {
+  data: Item[];
+  hidden?: boolean;
+}
+
+const { data } = Astro.props;
+---
+
+<ul class=`${data.length > 4 && 'md:columns-2'}`>
+  {
+    data.map(({ name, href }) => (
+      <li class="">
+        <a
+          href={href}
+          class={`group px-3 py-1 md:px-6 md:py-4 hover:bg-primary-50 rounded md:font-medium text-gray-800 text-sm md:text-lg hover:text-primary-800 transition-all duration-200 ease-in-out flex justify-between items-center`}
+        >
+          <span class="inline-block">{name}</span>{' '}
+          <span class="hidden md:inline-block opacity-0 transition-all duration-200 pl-2 group-hover:opacity-100"> ➜</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

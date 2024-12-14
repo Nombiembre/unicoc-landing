@@ -1,0 +1,35 @@
+---
+import Head from '~/components/common/Head.astro';
+import Hero from '~/components/common/Hero.astro';
+import Footer from '~/components/Footer.astro';
+import Header from '~/components/Header/Header.astro';
+
+interface Props {
+  title: string;
+  hero?: {
+    title: string;
+    bgUrl: string;
+  };
+}
+
+const { title, hero } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <Head title={title} />
+  <body class="flex flex-col min-h-dvh">
+    <Header />
+    <main transition:animate="fade">
+      {hero && <Hero title={hero.title} bgUrl={hero.bgUrl} />}
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: poppins, sans-serif;
+  }
+</style>

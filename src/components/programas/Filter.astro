@@ -1,0 +1,73 @@
+---
+let filter = Astro.url.searchParams.get('filter');
+if (filter === null) {
+  filter = 'pregrado';
+}
+
+interface Props {
+  filters: string[];
+}
+
+const { filters } = Astro.props;
+---
+
+<div id="filter" class="md:text-xl flex flex-wrap gap-8 justify-center">
+  {
+    filters.map((f) => {
+      return (
+        <button
+          value={f}
+          class=" transition-all duration-300 px-3 md:px-5 md:py-2 py-2 bg-white border border-primary-800 text-black rounded-lg font-semibold font-bricolage max-w-fit hover:text-primary-900"
+          class:list={[{ selected: filter === f }]}
+          type="button"
+        >
+          {f}
+        </button>
+      );
+    })
+  }
+</div>
+
+<style>
+  .selected {
+    @apply bg-primary-900 text-white hover:saturate-50;
+  }
+</style>
+
+<script>
+  import { filterStore } from '~/stores/filterStore';
+
+  document.addEventListener('astro:page-load', () => {
+    const btns = document.querySelectorAll('#filter button') as NodeListOf<HTMLButtonElement>;
+    const defaultBtn = document.querySelector('#filter .selected') as HTMLButtonElement;
+    let prev = defaultBtn;
+    const url = new URL(window.location.href);
+    let filter = url.searchParams.get('filter');
+    if (filter === null) {
+      filter = 'pregrado';
+    }
+    setFilter(filter);
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        prev.classList.remove('selected');
+        btn.classList.add('selected');
+        prev = btn;
+        const selectedFilter = btn.value;
+        setFilter(selectedFilter);
+        const url = new URL(window.location.href);
+        if (selectedFilter !== 'pregrado') {
+          url.searchParams.set('filter', selectedFilter);
+          window.history.pushState({}, '', url);
+        } else {
+          url.searchParams.delete('filter');
+          window.history.pushState({}, '', url);
+        }
+      });
+    });
+
+    function setFilter(filter) {
+      filterStore.set(filter);
+    }
+  });
+</script>

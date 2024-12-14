@@ -1,0 +1,37 @@
+---
+import NAVIGATION from '~/const/navigation';
+import Logo from '../common/Logo.astro';
+import NavItem from './NavItem.astro';
+
+interface Props {
+  class?: string;
+  mobile?: boolean;
+}
+
+const { class: className, mobile } = Astro.props;
+
+let isMobile = false
+
+if (mobile) {
+  isMobile = true
+}
+---
+
+<nav>
+  <ul class={`gap-x-0 items-center ${className}`}>
+    {
+      NAVIGATION.map((item, i) => {
+        if (i == 1) {
+          return (
+            <NavItem mobile={isMobile} navItem={item} />
+            <Logo href="/" class="mx-10" />
+          )
+        }
+
+        return (
+          <NavItem mobile={isMobile} navItem={item} />
+        );
+      })
+    }
+  </ul>
+</nav>

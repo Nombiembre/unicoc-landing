@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  variant: 'primary' | 'secondary';
+  placeholder: string;
+  class?: string;
+}
+
+const { placeholder, href, class: className, variant, ...props } = Astro.props;
+---
+
+<a
+  referrerpolicy="no-referrer"
+  href={href}
+  class={`block hover:saturate-50 transition-all px-4 md:px-7 md:py-4 py-2 bg-primary-900 rounded-xl font-semibold font-bricolage max-w-fit ${className}`}
+  {...props}
+>
+  {placeholder}</a
+>

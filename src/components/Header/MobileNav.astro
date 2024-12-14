@@ -1,0 +1,40 @@
+---
+import Nav from './Nav.astro';
+---
+
+<svg
+  id="mobile-hamburger"
+  width="40px"
+  height="40px"
+  class="max-h-10 cursor-pointer md:hidden"
+  viewBox="0 0 24 24"
+  fill="none"
+>
+  <path d="M4 18L20 18" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M4 12L20 12" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M4 6L20 6" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+</svg>
+
+<div id="mobile-nav" data-expanded="false" class="absolute bg-white top-16 px-2 mx-auto left-0 w-full z-[100] hidden">
+  <Nav mobile={true} class="border  rounded-lg px-5" />
+</div>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const navHamburger = document.getElementById('mobile-hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    navHamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.getAttribute('data-expanded');
+
+      if (isOpen === 'true') {
+        mobileNav.classList.add('hidden');
+        mobileNav.setAttribute('data-expanded', 'false');
+      } else {
+        mobileNav.classList.remove('hidden');
+        mobileNav.setAttribute('data-expanded', 'true');
+      }
+      console.log('the value is', isOpen);
+    });
+  });
+</script>

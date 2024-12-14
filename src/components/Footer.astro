@@ -1,0 +1,36 @@
+---
+
+const links = [
+  {
+    title: 'Support',
+    url: '/support',
+  },
+  {
+    title: 'Privacy Policy',
+    url: '/privacy',
+  },
+  {
+    title: 'Terms and conditions',
+    url: '/terms',
+  },
+];
+---
+
+<footer
+  class="border-default/80 relative z-40 text-default border-t border-gray-300 mt-auto bg-primary-900 py-4 text-white"
+>
+  <div class="container flex items-center py-4 justify-between text-sm">
+    <div>
+      <span>© {new Date().getFullYear()} TypeDecoration</span>
+    </div>
+    <ul class="flex items-center gap-6">
+      {
+        links.map(({ url, title }) => (
+          <li>
+            <a href={url}>{title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

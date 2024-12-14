@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import Section from './common/Section.astro';
+
+const data = await getCollection('news');
+---
+
+<Section>
+  <div class="bento || gap-3">
+    {
+      data
+        .sort((a, b) => {
+          const dateA = new Date(a.data.date).getTime();
+          const dateB = new Date(b.data.date).getTime();
+          return dateB - dateA;
+        })
+        .map((post, i) => {
+          const { title, date, heroImage } = post.data;
+          const transitionName = `post-img-${post.slug}`;
+          const defaultClasses = `p-8 border border-zinc-400/40 rounded-default bg-black/40 flex flex-col content-between h-full text-white bg-blend-multiply md:hover:bg-black/70 transition-all duration-200 relative overflow-hidden group`;
+
+          let indexClasses = '';
+          if (i === 0) {
+            indexClasses = 'md:rounded-tl-5xl [grid-area:one]';
+          } else if (i === 1) {
+            indexClasses = 'md:rounded-tr-5xl [grid-area:two]';
+          } else if (i === 2) {
+            indexClasses = 'md:rounded-bl-5xl [grid-area:three]';
+          } else if (i === 3) {
+            indexClasses = ' [grid-area:four]';
+          } else if (i === 4) {
+            indexClasses = 'md:rounded-br-5xl [grid-area:five]';
+          }
+
+          return (
+            <div class={`${defaultClasses} ${indexClasses} `}>
+              <img
+                class="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-all duration-500 -z-10"
+                src={heroImage}
+                alt=""
+                transition:name={transitionName}
+              />
+              <div class="space-y-4 mb-4">
+                <h2 class="text-2xl font-bricolage font-medium text-white line-clamp-2 truncate text-balance">
+                  {title}
+                </h2>
+                <p class="text-sm text-zinc-100 font-medium">
+                  {date.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </p>
+              </div>
+              <a
+                class="block border border-white rounded-full px-2 py-1 max-w-fit mt-auto hover:bg-white font-bricolage hover:text-black transition-all duration-200"
+                href={`/noticias/${post.slug}`}
+              >
+                Ver más
+              </a>
+            </div>
+          );
+        })
+    }
+  </div>
+</Section>
+
+<style>
+  .bento {
+    display: grid;
+    grid-template-areas:
+      'one'
+      'two'
+      'three'
+      'four'
+      'five';
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 400px);
+  }
+
+  @media (min-width: 768px) {
+    .bento {
+      display: grid;
+      grid-template-areas:
+        'one one two two'
+        'three four four five';
+
+      grid-template-columns: 1fr 200px 200px 1fr;
+    }
+  }
+</style>

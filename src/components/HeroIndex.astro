@@ -1,0 +1,28 @@
+---
+import Button from './common/Button.astro';
+import Section from './common/Section.astro';
+---
+
+<div
+  style={`background-image: url('/images/hero_bg_1.jpg');`}
+  class="min-h-[85svh] bg-zinc-800 h-full bg-no-repeat bg-cover flex flex-col justify-center"
+>
+  <div class="container text-white">
+    <Section>
+      <div class="relative max-w-2xl isolate space-y-4">
+        <div class="absolute bg-black -inset-0 filter blur-[100px] -z-10"></div>
+        <span class="uppercase text-zinc-200 inline-block font-semibold tracking-wider text-xl"
+          >El Conocimiento es poder</span
+        >
+        <h1 class="text-6xl leading-tight font-bricolage font-bold">
+          <span class="bg-primary-900">Unicoc</span> - El mejor lugar para invertir en tu conocimiento.
+        </h1>
+        <p>
+          Una universidad es una institución vibrante que actúa como un centro de educación superior e investigación,
+          ofreciendo un entorno dinámico y estimulante.
+        </p>
+        <Button href="/programas" variant="primary" placeholder="Explora Nuestros Programas" />
+      </div>
+    </Section>
+  </div>
+</div>

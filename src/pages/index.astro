@@ -1,0 +1,19 @@
+---
+import NewsBento from '~/components/Bento.astro';
+import Features from '~/components/Features.astro';
+import Layout from '~/layouts/Layout.astro';
+import Convenios from '~/components/Convenios.astro'
+import Hero from '~/components/HeroIndex.astro';
+import Button from '~/components/common/Button.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <Hero fullHeight>
+    <Button slot="button" href="/programas" variant="primary" placeholder="Explora Nuestros Programas" />
+  </Hero>
+  <div class="container">
+    <Features />
+    <Convenios />
+    <NewsBento />
+  </div>
+</Layout>
