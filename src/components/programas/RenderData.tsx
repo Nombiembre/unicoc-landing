@@ -39,12 +39,12 @@ const RenderData: React.FC<Props> = ({ bookIcon, geoIcon }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.1 }} // Duración del fade
           >
-            <Card data={programa} icons={{bookIcon, geoIcon}} index={i} />
+            <Card data={programa} icons={{ bookIcon, geoIcon }} index={i} />
           </motion.div>
         ))}
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default RenderData;

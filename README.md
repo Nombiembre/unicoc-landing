@@ -18,7 +18,6 @@ This is my personal blank canvas template for developing with Astro, equipped wi
   cd astro-starting-template
 ```
 
-
 ## ⌨️ Scripts
 
 ```sh

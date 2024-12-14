@@ -10,10 +10,10 @@ interface Props {
 
 const { class: className, mobile } = Astro.props;
 
-let isMobile = false
+let isMobile = false;
 
 if (mobile) {
-  isMobile = true
+  isMobile = true;
 }
 ---
 
@@ -23,14 +23,14 @@ if (mobile) {
       NAVIGATION.map((item, i) => {
         if (i == 1) {
           return (
-            <NavItem mobile={isMobile} navItem={item} />
-            <Logo href="/" class="mx-10" />
-          )
+            <>
+              <NavItem mobile={isMobile} navItem={item} />
+              <Logo href="/" class="mx-10" />
+            </>
+          );
         }
 
-        return (
-          <NavItem mobile={isMobile} navItem={item} />
-        );
+        return <NavItem mobile={isMobile} navItem={item} />;
       })
     }
   </ul>
